@@ -209,57 +209,6 @@ fun AddTaskScreenPreview() {
         cancelbutton = { }
     )
 }
-@Composable
-fun TaskCardUI(
-    title: String,
-    description: String,
-    barColor: Color,
-    onClick: () -> Unit
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 8.dp)
-            .clickable { onClick() }
-    ) {
-
-        // Left colored bar
-        Column(
-            modifier = Modifier
-                .width(6.dp)
-                .height(80.dp)
-                .background(barColor, shape = MaterialTheme.shapes.medium)
-        ) {}
-
-        Spacer(modifier = Modifier.width(12.dp))
-
-        // Card container
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.White, shape = MaterialTheme.shapes.large)
-                .padding(16.dp)
-        ) {
-
-            Text(
-                text = title,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFF2D2D2D)
-            )
-
-            if (description.isNotBlank()) {
-                Spacer(modifier = Modifier.height(6.dp))
-                Text(
-                    text = description,
-                    fontSize = 14.sp,
-                    color = Color.Gray
-                )
-            }
-        }
-    }
-}
-
 
 
 @Composable
@@ -277,7 +226,6 @@ fun HomeScreen(
             .padding(16.dp)
     ) {
 
-        // Header
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
